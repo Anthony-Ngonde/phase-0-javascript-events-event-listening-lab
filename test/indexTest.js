@@ -1,6 +1,7 @@
-require ( './helpers.js' );
-
 const sinon = require('sinon');
+require("./helpers.js");
+
+const sinon = require("sinon");
 
 describe("index.js", () => {
   let input;
@@ -9,6 +10,10 @@ describe("index.js", () => {
     input = document.getElementById('button');
     sinon.spy(input, 'addEventListener');
   })
+  beforeEach(function () {
+    input = document.getElementById("button");
+    sinon.spy(input, "addEventListener");
+  });
 
   it("binds an event listener in addingEventListener()", () => {
     addingEventListener();
